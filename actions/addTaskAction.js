@@ -2,6 +2,7 @@
 
 import { ref, set, push } from "firebase/database"
 import { db } from "@/lib/firebase/firebaseInit"
+import {revalidatePath} from 'next/cache'
 
 
 export async function addAction(prevState, formData){
@@ -12,6 +13,7 @@ export async function addAction(prevState, formData){
         category
     }
     const response= await addTask(newTask)
+    revalidatePath('/demo')
     return {message: response}
 }
 
