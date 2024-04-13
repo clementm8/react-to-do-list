@@ -2,8 +2,8 @@ import {Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTit
 import {SlMenu, SlDiamond, SlBookOpen, SlAnchor, SlBubbles, SlChemistry, SlSettings, SlCompass} from 'react-icons/sl'
 import {cn} from '@/lib/utils/mergeCss'
 import {Title} from '@/components/headings'
-import {Anchor, AnchorLabel} from '@/components/anchor/Anchor'
-import {Container} from '../layout/Container'
+import {Anchor, AnchorLabel} from '@/components/anchor/anchor'
+import {Container} from '../layout/container'
 
 function MobileMenu({children, className}) {
 	return (
