@@ -54,7 +54,7 @@ function UpdateTaskForm({ todo, uid, payload, className }) {
                 </FormControl>
                 <FormControl className='flex flex-col'>
                     <Label htmlFor='task'>Task</Label>
-                    <Input onInput={handleInput} id='task' name='task' value={task} />
+                    <Input onInput={handleInput} id='todo' name='todo' value={task} />
                 </FormControl>
                 <FormControl className='flex flex-col pt-3'>
                     <button className="bg-black text-white w-full py-2.5 rounded-lg mt-3 font-semibold">Update Task</button>
