@@ -6,7 +6,7 @@ import {revalidatePath} from 'next/cache'
 
 
 export async function updateAction(prevState, formData){
-    const todo= formData.get('task')
+    const todo= formData.get('todo')
     const category= formData.get('category')
     const uid= formData.get('uid')
     const newObj={
@@ -19,11 +19,11 @@ export async function updateAction(prevState, formData){
     return{message: response}
 }
 
-async function editTask(task, uid){
+async function editTask(todo, uid){
     const path= `todos/${uid}`
     const dbRef= ref(db,path)
     try {
-        await update(dbRef, task)
+        await update(dbRef, todo)
         return 'success'
     } catch (error) {
         return 'failure'

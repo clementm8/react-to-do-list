@@ -11,10 +11,10 @@ const initialState = {
     message: 'init'
 }
 
-function UpdateTaskForm({ todo, uid, payload, className }) {
+function UpdateTaskForm({ uid, payload, className }) {
     const [state, formAction] = useFormState(updateAction, initialState)
     const [category, setCategory] = useState(payload.category)
-    const [task, setTask] = useState(payload.todo)
+    const [todo, setTodo] = useState(payload.todo)
 
     function handleInput(e) {
         switch (e.currentTarget.name) {
@@ -22,7 +22,7 @@ function UpdateTaskForm({ todo, uid, payload, className }) {
                 setCategory(e.currentTarget.value)
                 break
             case 'todo':
-                setTask(e.currentTarget.value)
+                setTodo(e.currentTarget.value)
                 break
             default:
                 null
@@ -53,8 +53,8 @@ function UpdateTaskForm({ todo, uid, payload, className }) {
                     <Input onInput={handleInput} id='category' name='category' value={category} />
                 </FormControl>
                 <FormControl className='flex flex-col'>
-                    <Label htmlFor='task'>Task</Label>
-                    <Input onInput={handleInput} id='todo' name='todo' value={task} />
+                    <Label htmlFor='todo'>Task</Label>
+                    <Input onInput={handleInput} id='todo' name='todo' value={todo} />
                 </FormControl>
                 <FormControl className='flex flex-col pt-3'>
                     <button className="bg-black text-white w-full py-2.5 rounded-lg mt-3 font-semibold">Update Task</button>
